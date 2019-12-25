@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ddancn.drawpanel.CircleColorView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/color"
+    android:layout_width="28dp"
+    android:layout_height="28dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    app:color="#ff0000"
+    app:isChosen="false">
+
+</com.ddancn.drawpanel.CircleColorView>

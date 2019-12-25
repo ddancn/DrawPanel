@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DrawPanel</string>
+    <string name="revert">撤销</string>
+    <string name="clear">清空</string>
+</resources>

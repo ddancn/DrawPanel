@@ -25,15 +25,33 @@
         app:layout_constraintEnd_toStartOf="@id/btn_clear"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/draw_panel" />
+        app:layout_constraintTop_toBottomOf="@id/draw_panel" />
 
     <Button
         android:id="@+id/btn_clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/clear"
+        app:layout_constraintEnd_toEndOf="@id/btn_eraser"
+        app:layout_constraintStart_toEndOf="@id/btn_revert"
+        app:layout_constraintTop_toTopOf="@id/btn_revert" />
+
+    <Button
+        android:id="@+id/btn_eraser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eraser"
+        app:layout_constraintEnd_toStartOf="@id/btn_magnifier"
+        app:layout_constraintStart_toEndOf="@id/btn_clear"
+        app:layout_constraintTop_toTopOf="@id/btn_revert" />
+
+    <Button
+        android:id="@+id/btn_magnifier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/magnifier"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_revert"
+        app:layout_constraintStart_toEndOf="@id/btn_eraser"
         app:layout_constraintTop_toTopOf="@id/btn_revert" />
 
     <SeekBar

@@ -21,6 +21,12 @@ class MainActivity : AppCompatActivity() {
         btn_clear.setOnClickListener {
             draw_panel.clear()
         }
+        btn_eraser.setOnClickListener {
+            draw_panel.setMode(DrawPanel.EditMode.ERASER)
+        }
+        btn_magnifier.setOnClickListener {
+            draw_panel.setMode(DrawPanel.EditMode.MAGNIFIER)
+        }
 
         // 粗细选择
         seek_bar.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {

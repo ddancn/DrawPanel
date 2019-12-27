@@ -24,6 +24,7 @@ class CircleColorView(context: Context, attrs: AttributeSet? = null) : View(cont
     private var radius = 0f
 
     private var isChosen = false
+    private var isLight: Boolean
 
     init {
         // 从xml中获取属性
@@ -35,8 +36,9 @@ class CircleColorView(context: Context, attrs: AttributeSet? = null) : View(cont
         strokePaint = Paint(paint)
         strokePaint.style = Paint.Style.STROKE
         strokePaint.strokeWidth = 3f
-        // 如果是白色或黄色，边框设成灰色
-        if (paint.color == Color.WHITE || paint.color == Color.YELLOW) {
+        // 如果是浅色，把边框设成灰色
+        isLight = paint.color == Color.WHITE || paint.color == Color.YELLOW
+        if (isLight) {
             strokePaint.color = Color.LTGRAY
         }
     }
@@ -52,8 +54,8 @@ class CircleColorView(context: Context, attrs: AttributeSet? = null) : View(cont
     override fun onDraw(canvas: Canvas?) {
         // 画圆
         canvas?.drawCircle(width / 2, height / 2, radius - 8, paint)
-        // 如果是白色或黄色，给一个灰色的描边
-        if (paint.color == Color.WHITE || paint.color == Color.YELLOW) {
+        // 如果是浅色，给一个灰色的描边
+        if (isLight) {
             canvas?.drawCircle(width / 2, height / 2, radius - 8, strokePaint)
         }
         // 如果被选中，画边框
@@ -68,7 +70,8 @@ class CircleColorView(context: Context, attrs: AttributeSet? = null) : View(cont
     fun setColor(@ColorInt c: Int) {
         paint.color = c
         strokePaint.color = c
-        // 如果是白色，边框设成灰色
+        // 如果是浅色，边框设成灰色
+        isLight = paint.color == Color.WHITE || paint.color == Color.YELLOW
         if (paint.color == Color.WHITE || paint.color == Color.YELLOW) {
             strokePaint.color = Color.LTGRAY
         }

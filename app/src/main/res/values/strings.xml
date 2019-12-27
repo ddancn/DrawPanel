@@ -2,4 +2,6 @@
     <string name="app_name">DrawPanel</string>
     <string name="revert">撤销</string>
     <string name="clear">清空</string>
+    <string name="eraser">橡皮擦</string>
+    <string name="magnifier">放大镜</string>
 </resources>

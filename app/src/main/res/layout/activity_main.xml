@@ -65,12 +65,13 @@
         android:progress="2"
         app:layout_constraintTop_toBottomOf="@id/btn_revert" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_color"
+    <com.ddancn.drawpanel.CircleColorGroup
+        android:id="@+id/color_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
-        app:layout_constraintTop_toBottomOf="@id/seek_bar" />
+        app:layout_constraintTop_toBottomOf="@id/seek_bar"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

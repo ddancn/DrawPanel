@@ -15,7 +15,7 @@ import kotlin.math.min
  * @date 2019/12/24
  *
  */
-class CircleColorView(context: Context, attrs: AttributeSet? = null) : View(context, attrs) {
+class CircleColor(context: Context, attrs: AttributeSet? = null) : View(context, attrs) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val strokePaint: Paint
 
@@ -28,9 +28,9 @@ class CircleColorView(context: Context, attrs: AttributeSet? = null) : View(cont
 
     init {
         // 从xml中获取属性
-        val array = context.obtainStyledAttributes(attrs, R.styleable.CircleColorView)
-        isChosen = array.getBoolean(R.styleable.CircleColorView_isChosen, false)
-        paint.color = array.getColor(R.styleable.CircleColorView_color, 0xff0000)
+        val array = context.obtainStyledAttributes(attrs, R.styleable.CircleColor)
+        isChosen = array.getBoolean(R.styleable.CircleColor_isChosen, false)
+        paint.color = array.getColor(R.styleable.CircleColor_color, 0xff0000)
         array.recycle()
         // 设置选中时边框的paint
         strokePaint = Paint(paint)
@@ -65,7 +65,7 @@ class CircleColorView(context: Context, attrs: AttributeSet? = null) : View(cont
     }
 
     /**
-     * 设置圆和边框颜色
+     * 设置圆和选中时边框颜色
      */
     fun setColor(@ColorInt c: Int) {
         paint.color = c

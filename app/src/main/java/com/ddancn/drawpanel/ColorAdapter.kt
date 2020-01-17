@@ -16,7 +16,7 @@ class ColorAdapter(
 ) : RecyclerView.Adapter<ColorAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val colorView: CircleColorView = itemView.findViewById(R.id.color)
+        val colorView: CircleColor = itemView.findViewById(R.id.color)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

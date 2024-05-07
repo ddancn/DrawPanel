@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.widget.LinearLayout
 import androidx.core.view.children
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.view_color_group.view.*
+import androidx.recyclerview.widget.RecyclerView
 
 /**
  * @author ddan.zhuang
@@ -28,11 +28,14 @@ class CircleColorGroup(context: Context, attrs: AttributeSet? = null) :
             Color.BLACK
         )
 
+    private var rvColor: RecyclerView
+
     init {
         LayoutInflater.from(context).inflate(R.layout.view_color_group, this)
-        rv_color.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        rvColor = findViewById(R.id.rv_color)
+        rvColor.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
-        rv_color.adapter = ColorAdapter(colorList) { color, position ->
+        rvColor.adapter = ColorAdapter(colorList) { color, position ->
             onChosen?.invoke(color)
             setChosen(position)
         }
@@ -56,9 +59,9 @@ class CircleColorGroup(context: Context, attrs: AttributeSet? = null) :
     /**
      * 设置选中项
      */
-    fun setChosen(position:Int){
+    fun setChosen(position: Int) {
         if (position in 0..colorList.lastIndex) {
-            rv_color.children.forEachIndexed { index, view ->
+            rvColor.children.forEachIndexed { index, view ->
                 (view as CircleColor).setChosen(index == position)
             }
         }
